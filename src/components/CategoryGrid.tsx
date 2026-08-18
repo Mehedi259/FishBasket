@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 const categories = [
-  { name: 'River Fish', image: 'https://images.unsplash.com/photo-1511247012975-f37b12d3d0c3?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Sea Fish', image: 'https://images.unsplash.com/photo-1580482594056-ed873d63b27b?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Shrimp & Prawns', image: 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Small Fish', image: 'https://images.unsplash.com/photo-1627945037926-e13d9cf4bb46?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Premium Fish', image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Ready to Cook', image: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=400&q=80' },
+  { name: 'River Fish', image: '/images/rui_generated.jpg' },
+  { name: 'Sea Fish', image: '/images/salmon.jpg' },
+  { name: 'Shrimp & Prawns', image: '/images/shrimp.jpg' },
+  { name: 'Small Fish', image: '/images/bass.jpg' },
+  { name: 'Premium Fish', image: '/images/hilsa_generated.jpg' },
+  { name: 'Ready to Cook', image: '/images/rui_generated.jpg' },
 ];
 
 export default function CategoryGrid() {
