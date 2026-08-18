@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishBasket - Premium Catch</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Background Animation Elements -->
+    <div class="bg-bubble" style="left: 10%; width: 80px; height: 80px; animation-duration: 8s;"></div>
+    <div class="bg-bubble" style="left: 30%; width: 40px; height: 40px; animation-duration: 5s; animation-delay: 2s;"></div>
+    <div class="bg-bubble" style="left: 70%; width: 60px; height: 60px; animation-duration: 7s; animation-delay: 1s;"></div>
+    <div class="bg-bubble" style="left: 85%; width: 50px; height: 50px; animation-duration: 6s; animation-delay: 3s;"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-fish-fins"></i> FishBasket
+                </a>
+                <div class="nav-links">
+                    <a href="#products">Our Catch</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Premium Catch from the Deep Ocean.</h1>
+                    <p>Sustainably sourced, highest quality fresh fish delivered to you in the Netherlands. Experience the taste of pure ocean perfection.</p>
+                    <a href="#products" class="btn btn-primary">View Collection <i class="fa-solid fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Fresh Arrivals</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be injected here by main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-fish-fins"></i> FishBasket
+                </div>
+                <p>Bringing the finest ocean catch to the Netherlands.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 FishBasket. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
