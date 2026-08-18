@@ -63,7 +63,7 @@ const WHATSAPP_NUMBER = "8801600000000";
 
 export default function ProductGrid() {
   return (
-    <section id="products" className="py-16 bg-gray-50">
+    <section id="products" className="py-16">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-end mb-8">
           <div>

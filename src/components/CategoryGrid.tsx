@@ -11,7 +11,7 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <section id="categories" className="py-12 bg-white">
+    <section id="categories" className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-ocean-dark mb-8">Shop by Category</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

@@ -5,12 +5,13 @@
   --color-ocean-mid: #203a43;
   --color-ocean-light: #2c5364;
   --color-ocean-accent: #00d2ff;
+  --color-ocean-bg: #e6f4f8;
 }
 
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 antialiased;
+    @apply bg-ocean-bg text-gray-900 antialiased;
   }
 }
