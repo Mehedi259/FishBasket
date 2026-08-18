@@ -51,10 +51,10 @@ const products = [
     },
     {
         id: 8,
-        name: "Premium Beef Boneless",
-        weight: "100% Halal & Fresh",
-        image: "https://fishmart.com.bd/wp-content/uploads/2026/01/Beef-Boneless-600x600-1.webp",
-        badge: "Meat"
+        name: "Premium Padma Hilsha (Ilish)",
+        weight: "Size: 1kg - 1.2kg",
+        image: "https://fishmart.com.bd/wp-content/uploads/2026/01/271a88_eb0a79cfa1c04a5aa9459f10f9a0c50a-150x150.jpg",
+        badge: "Premium"
     }
 ];
 
