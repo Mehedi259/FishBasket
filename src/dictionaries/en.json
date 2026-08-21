@@ -1,0 +1,68 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "hero": {
+    "title": "Fresh River Fish Delivered to You",
+    "subtitle": "100% organic and fresh fish sourced straight from the rivers of Bangladesh.",
+    "shopNow": "Shop Now",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "fastDelivery": "Fast Delivery",
+    "fastDeliveryDesc": "Safe and fresh delivery right to your doorstep.",
+    "fresh": "100% Fresh",
+    "freshDesc": "Chemical-free and sourced directly from fishermen.",
+    "secure": "Secure Payment",
+    "secureDesc": "Cash on delivery and secure online payment available.",
+    "support": "24/7 Support",
+    "supportDesc": "We are always here to help you."
+  },
+  "categories": {
+    "title": "Shop by Category",
+    "riverFish": "River Fish",
+    "seaFish": "Sea Fish",
+    "dryFish": "Dry Fish",
+    "frozen": "Frozen"
+  },
+  "products": {
+    "title": "Featured Products",
+    "addToCart": "Add to Cart",
+    "perKg": "/kg",
+    "outOfStock": "Out of Stock"
+  },
+  "cart": {
+    "title": "Your Shopping Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Proceed to Checkout",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "billingDetails": "Billing Details",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "address": "Delivery Address",
+    "city": "City",
+    "paymentMethod": "Payment Method",
+    "cashOnDelivery": "Cash on Delivery",
+    "placeOrder": "Place Order",
+    "orderSuccess": "Order placed successfully!",
+    "orderSuccessDesc": "Thank you for shopping with FishBasket. Your fresh fish is on the way."
+  },
+  "footer": {
+    "description": "Your trusted online fish market in Bangladesh. Delivering fresh, chemical-free fish directly from the river to your kitchen.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "address": "Dhaka, Bangladesh",
+    "phone": "+880 1234 567890",
+    "rights": "All rights reserved."
+  }
+}

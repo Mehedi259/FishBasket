@@ -1,112 +1,93 @@
+"use client";
+
 import Image from 'next/image';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import { products } from '@/data/products';
+import { useCartStore } from '@/store/cartStore';
 
-const products = [
-    {
-        id: 1,
-        name: "Deshi Rui Fish",
-        weight: "Size: 1.5kg - 2.5kg",
-        image: "/images/rui_generated.jpg",
-        badge: "Best Seller"
-    },
-    {
-        id: 2,
-        name: "Fresh River Ayre Fish",
-        weight: "Size: 1kg - 2kg",
-        image: "/images/bass.jpg",
-        badge: "Fresh"
-    },
-    {
-        id: 3,
-        name: "Padma Hilsha (Ilish)",
-        weight: "Size: 1kg - 1.2kg",
-        image: "/images/hilsa_generated.jpg",
-        badge: "Premium"
-    },
-    {
-        id: 4,
-        name: "Fresh Sea Shrimp (Golda)",
-        weight: "Size: Medium to Large",
-        image: "/images/shrimp.jpg",
-        badge: "Popular"
-    },
-    {
-        id: 5,
-        name: "Deshi Koi Fish",
-        weight: "Live Deshi Koi",
-        image: "/images/hilsa.jpg"
-    },
-    {
-        id: 6,
-        name: "Katol Fish",
-        weight: "Size: 2kg - 4kg",
-        image: "/images/rui_generated.jpg",
-        badge: "Fresh"
-    },
-    {
-        id: 7,
-        name: "Mixed Small Fish",
-        weight: "Fresh deshi small fish",
-        image: "/images/bass.jpg"
-    },
-    {
-        id: 8,
-        name: "Premium Sea Bass",
-        weight: "Fresh Catch",
-        image: "/images/salmon.jpg",
-        badge: "Ocean"
-    }
-];
+export default function ProductGrid({ dict, lang }: { dict?: any; lang: string }) {
+  const addItem = useCartStore((state) => state.addItem);
 
-const WHATSAPP_NUMBER = "8801600000000";
+  const handleAddToCart = (product: any) => {
+    addItem({
+      id: product.id,
+      name: lang === 'bn' ? product.nameBn : product.nameEn,
+      price: product.price,
+      image: product.image,
+    });
+    // Optional: add a toast notification here
+  };
 
-export default function ProductGrid() {
   return (
-    <section id="products" className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-end mb-8">
+    <section id="products" className="py-20 bg-ocean-bg relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-20 -left-20 w-64 h-64 bg-ocean-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 -right-20 w-80 h-80 bg-ocean-light/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-ocean-dark">Fresh Arrivals</h2>
-            <p className="text-gray-500 mt-2">Discover our latest catch of the day, straight from the waters to you.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-ocean-dark mb-4">{dict?.products?.title || 'Exclusive Selection'}</h2>
+            <div className="w-24 h-1 bg-ocean-gradient rounded-full mb-4"></div>
+            <p className="text-gray-500 max-w-xl">Discover our latest catch of the day, straight from the waters to you. Highest quality guaranteed.</p>
           </div>
-          <Link href="#" className="text-ocean-accent font-semibold hover:underline hidden sm:block">View All</Link>
+          <Link href={`/${lang}/products`} className="text-ocean-accent font-semibold hover:text-ocean-dark transition-colors flex items-center gap-1 mt-4 md:mt-0 group">
+            View All <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
           {products.map((product) => {
-            const message = encodeURIComponent(`Hello FishBasket, I would like to order "${product.name}" (${product.weight}). Could you let me know the price and delivery details?`);
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-
+            const name = lang === 'bn' ? product.nameBn : product.nameEn;
+            const description = lang === 'bn' ? product.descriptionBn : product.descriptionEn;
+            
             return (
-              <div key={product.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group flex flex-col h-full">
-                <div className="relative h-56 w-full overflow-hidden bg-gray-100">
-                  {product.badge && (
-                    <span className="absolute top-3 left-3 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">
+              <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,180,216,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full relative">
+                
+                {product.badge && (
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="bg-white/90 backdrop-blur-sm text-ocean-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm border border-gray-100">
                       {product.badge}
                     </span>
-                  )}
-                  <Image 
-                    src={product.image} 
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  />
+                  </div>
+                )}
+
+                <div className="relative h-64 w-full overflow-hidden bg-gray-50 block">
+                  <Link href={`/${lang}/product/${product.id}`}>
+                    <Image 
+                      src={product.image} 
+                      alt={name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  </Link>
+                  {/* Subtle overlay on hover */}
+                  <div className="absolute inset-0 bg-ocean-dark/0 group-hover:bg-ocean-dark/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight group-hover:text-ocean-accent transition-colors">{product.name}</h3>
-                  <p className="text-sm text-gray-500 mb-6 flex-1">{product.weight}</p>
+                
+                <div className="p-6 flex flex-col flex-1">
+                  <Link href={`/${lang}/product/${product.id}`}>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-ocean-accent transition-colors">{name}</h3>
+                  </Link>
+                  <p className="text-sm text-gray-500 mb-4 flex-1 line-clamp-2">{description}</p>
                   
-                  <a 
-                    href={whatsappUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-green-50 text-green-700 hover:bg-green-500 hover:text-white border border-green-200 hover:border-green-500 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300"
+                  <div className="flex items-end justify-between mb-5">
+                    <div className="text-2xl font-bold text-ocean-dark">
+                      ৳{product.price} <span className="text-sm font-normal text-gray-500">{dict?.products?.perKg || '/kg'}</span>
+                    </div>
+                  </div>
+
+                  <button 
+                    onClick={() => handleAddToCart(product)}
+                    className="w-full flex items-center justify-center gap-2 bg-gray-50 hover:bg-ocean-gradient text-ocean-dark hover:text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 border border-gray-200 hover:border-transparent group/btn shadow-sm hover:shadow-md"
                   >
-                    <MessageCircle size={18} />
-                    Order on WhatsApp
-                  </a>
+                    <ShoppingBag size={18} className="group-hover/btn:scale-110 transition-transform" />
+                    {dict?.products?.addToCart || 'Add to Cart'}
+                  </button>
                 </div>
               </div>
             );
